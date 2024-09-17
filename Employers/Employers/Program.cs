@@ -28,17 +28,24 @@ namespace Employers
         }
         static void Main(string[] args)
         {
+            //Beolvasás
             List<Employers> dlista = new List<Employers>();
             StreamReader sr = new StreamReader("tulajdonsagok_100sor.txt");
+            //Hozzáadás a listához
             while (!sr.EndOfStream)
             {
                 dlista.Add(new Employers(sr.ReadLine()));
             }
+
+            //Dolgozók kiíratása
+            Console.Write("A dolgozók neve: ");
             foreach (var d in dlista)
             {
-                Console.WriteLine(d.nev);
+                Console.Write("{0}, ",d.nev);
             }
+            Console.WriteLine("\n");
 
+            //Legtöbbet kereső megkeresése
             int legnagyobbi = 0;
             for (int i = 0; i < dlista.Count; i++)
             {
@@ -47,17 +54,21 @@ namespace Employers
                     legnagyobbi = i;
                 }
             }
-            Console.WriteLine("{0} , {1}",dlista[legnagyobbi].azonosito,  dlista[legnagyobbi].kereset);
+            Console.WriteLine("Legtöbbet kereső azonosítója: {0} , keresete: {1}\n",dlista[legnagyobbi].azonosito,  dlista[legnagyobbi].kereset);
 
+
+            //10 éven belül nyugdíjba vonuló emberek kiíratása
+            Console.Write("Emberek akik 10 éven belül nyugdíjasak lesznek:");
             foreach (var d in dlista)
             {
                 if (d.kor >= 55)
                 {
-                    Console.Write("{0}, ",d.nev);
+                    Console.Write(" {0}, ",d.nev);
                 }
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
+            //Emberek akik 50.000 felett keresnek
             int otvenezerfelett = 0;
             foreach(var d in dlista)
             {
@@ -66,7 +77,7 @@ namespace Employers
                     otvenezerfelett++;
                 }
             }
-            Console.WriteLine(otvenezerfelett);
+            Console.WriteLine("50000 felett kereső emberek száma: {0}",otvenezerfelett);
             Console.ReadLine();
         }
     }
