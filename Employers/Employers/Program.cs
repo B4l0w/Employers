@@ -48,6 +48,14 @@ namespace Employers
                 }
             }
             Console.WriteLine("{0} , {1}",dlista[legnagyobbi].azonosito,  dlista[legnagyobbi].kereset);
+
+            foreach (var d in dlista)
+            {
+                if (d.kor >= 55)
+                {
+                    Console.Write("{0}, ",d.nev);
+                }
+            }
             Console.ReadLine();
         }
     }
