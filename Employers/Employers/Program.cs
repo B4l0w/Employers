@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Collections;
 
 namespace Employers
 {
@@ -27,9 +28,12 @@ namespace Employers
         }
         static void Main(string[] args)
         {
-            
+            List<Employers> dlista = new List<Employers>();
             StreamReader sr = new StreamReader("tulajdonsagok_100sor.txt");
-            
+            while (!sr.EndOfStream)
+            {
+                dlista.Add(new Employers(sr.ReadLine()));
+            }
         }
     }
 }
