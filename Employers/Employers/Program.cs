@@ -58,10 +58,10 @@ namespace Employers
 
 
             //10 éven belül nyugdíjba vonuló emberek kiíratása
-            Console.Write("Emberek akik 10 éven belül nyugdíjasak lesznek:");
+            Console.Write("Emberek akik 10 év múlva nyugdíjasak lesznek:");
             foreach (var d in dlista)
             {
-                if (d.kor >= 55)
+                if (d.kor == 55)
                 {
                     Console.Write(" {0}, ",d.nev);
                 }
