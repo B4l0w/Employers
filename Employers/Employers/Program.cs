@@ -54,7 +54,7 @@ namespace Employers
                     legnagyobbi = i;
                 }
             }
-            Console.WriteLine("Legtöbbet kereső azonosítója: {0} , keresete: {1}\n",dlista[legnagyobbi].azonosito,  dlista[legnagyobbi].kereset);
+            Console.WriteLine("Legtöbbet kereső azonosítója: {0} , neve: {1}\n",dlista[legnagyobbi].azonosito,  dlista[legnagyobbi].nev);
 
 
             //10 éven belül nyugdíjba vonuló emberek kiíratása
