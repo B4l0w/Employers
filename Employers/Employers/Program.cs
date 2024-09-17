@@ -56,6 +56,17 @@ namespace Employers
                     Console.Write("{0}, ",d.nev);
                 }
             }
+            Console.WriteLine();
+
+            int otvenezerfelett = 0;
+            foreach(var d in dlista)
+            {
+                if (d.kereset > 50000)
+                {
+                    otvenezerfelett++;
+                }
+            }
+            Console.WriteLine(otvenezerfelett);
             Console.ReadLine();
         }
     }
