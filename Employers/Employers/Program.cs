@@ -38,6 +38,16 @@ namespace Employers
             {
                 Console.WriteLine(d.nev);
             }
+
+            int legnagyobbi = 0;
+            for (int i = 0; i < dlista.Count; i++)
+            {
+                if (dlista[i].kereset > dlista[legnagyobbi].kereset)
+                {
+                    legnagyobbi = i;
+                }
+            }
+            Console.WriteLine("{0} , {1}",dlista[legnagyobbi].azonosito,  dlista[legnagyobbi].kereset);
             Console.ReadLine();
         }
     }
