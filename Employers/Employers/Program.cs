@@ -34,6 +34,11 @@ namespace Employers
             {
                 dlista.Add(new Employers(sr.ReadLine()));
             }
+            foreach (var d in dlista)
+            {
+                Console.WriteLine(d.nev);
+            }
+            Console.ReadLine();
         }
     }
 }
